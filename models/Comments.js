@@ -1,9 +1,13 @@
+// WHEN I click on an existing blog post
+// THEN I am presented with the post title, contents, post creator’s username, and date created for that post 
+// *****and have the option to leave a comment****
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Gallery extends Model {}
+class Comments extends Model {}
 
-Blog.init(
+Comments.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,19 +15,12 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    starting_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    ending_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
   },
+
   {
     sequelize,
     freezeTableName: true,
@@ -32,4 +29,4 @@ Blog.init(
   }
 );
 
-module.exports = Gallery;
+module.exports = Comments;

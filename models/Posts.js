@@ -1,6 +1,5 @@
-// WHEN I click on an existing blog post
-// THEN I am presented with the post title, contents, post creator’s username, and date created 
-// for that post and have the option to leave a comment
+// WHEN I click on the button to add a new blog post
+// THEN I am prompted to enter both a title and contents for my blog post
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
@@ -19,14 +18,7 @@ Posts.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    exhibition_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+    
     description: {
       type: DataTypes.STRING,
       allowNull: false,
