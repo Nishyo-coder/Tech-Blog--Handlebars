@@ -22,17 +22,17 @@ Posts.init(
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'comment',
+      // references: {
+      //   model: 'comments',
     },
     
     },
-  },
+  
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Bpost',
+    modelName: 'Posts',
   }
 );
 
